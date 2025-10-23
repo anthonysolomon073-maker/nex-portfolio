@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sticky Transparent Nav</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      transition: background-color 0.3s;
+      z-index: 999;
+    }
+
+    .navbar.transparent {
+      background-color: transparent;
+    }
+
+    .navbar.solid {
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+      display: block;
+    }
+
+    .nav-links {
+      list-style: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.95);
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      display: none;
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+
+    .nav-links li {
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      color: #0af;
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .nav-links {
+        position: static;
+        flex-direction: row;
+        background: none;
+        display: flex !important;
+        gap: 20px;
+      }
+
+      .nav-links li {
+        padding: 0;
+      }
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x800') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar transparent" id="navbar">
+    <div class="logo">BrandName</div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome</h1>
+    <p>Transparent Navbar Example</p>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>We are awesome.</p>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <p>We offer great things.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Reach us here.</p>
+  </section>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const navBar = document.getElementById('navbar');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Change nav background on scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navBar.classList.remove('transparent');
+        navBar.classList.add('solid');
+      } else {
+        navBar.classList.add('transparent');
+        navBar.classList.remove('solid');
+      }
+    });
+
+    // Switch active link
+    navItems.forEach(link => {
+      link.addEventListener('click', function () {
+        navItems.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        navLinks.classList.remove('show');
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* Base reset and smooth scroll */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  transition: background-color 0.3s;
+  z-index: 999;
+}
+
+.navbar.transparent {
+  background-color: transparent;
+}
+
+.navbar.solid {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.95);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  display: none;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-links li {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: #0af;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+}
+
+/* Desktop view */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    flex-direction: row;
+    background: none;
+    display: flex !important;
+    gap: 20px;
+  }
+
+  .nav-links li {
+    padding: 0;
+  }
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x800') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+section {
+  padding: 60px 20px;
+}

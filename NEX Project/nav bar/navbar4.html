@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bottom Nav Bar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding-bottom: 60px; /* Prevent content under bottom nav */
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    /* === Bottom Nav (Mobile First) === */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #222;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 60px;
+      z-index: 1000;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    }
+
+    .bottom-nav a {
+      flex: 1;
+      color: #ccc;
+      text-decoration: none;
+      font-size: 12px;
+      text-align: center;
+      padding: 6px 0;
+    }
+
+    .bottom-nav a.active,
+    .bottom-nav a:hover {
+      color: #0af;
+    }
+
+    .bottom-nav a i {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+
+    /* === Switch to top navbar on larger screens === */
+    @media (min-width: 768px) {
+      .bottom-nav {
+        top: 0;
+        bottom: auto;
+        justify-content: flex-end;
+        padding: 0 20px;
+        height: 60px;
+      }
+
+      .bottom-nav a {
+        flex: none;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .bottom-nav a i {
+        margin: 0;
+      }
+    }
+  </style>
+
+  <!-- Using Icons from Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav" id="bottom-nav">
+    <a href="#home" class="active"><i class="fas fa-home"></i>Home</a>
+    <a href="#search"><i class="fas fa-search"></i>Search</a>
+    <a href="#notifications"><i class="fas fa-bell"></i>Alerts</a>
+    <a href="#profile"><i class="fas fa-user"></i>Profile</a>
+  </nav>
+
+  <!-- Page Sections -->
+  <section id="home">
+    <h1>Home</h1>
+    <p>This is your mobile-style bottom nav bar.</p>
+  </section>
+
+  <section id="search">
+    <h1>Search</h1>
+    <p>Search content here.</p>
+  </section>
+
+  <section id="notifications">
+    <h1>Notifications</h1>
+    <p>You have no new alerts.</p>
+  </section>
+
+  <section id="profile">
+    <h1>Profile</h1>
+    <p>This is your profile page.</p>
+  </section>
+  
+  
+
+  <script>
+    const navLinks = document.querySelectorAll('.bottom-nav a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>first p project</title>
+    <style>
+          /* Navbar Base (Mobile First) */
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  position: relative;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.logo {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+}
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+.logo.first {
+    color: black;
+}
+.logo .second {
+    color: blue;
+    margin-left: -5px;
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Nav Links hidden by default on mobile */
+.nav-links {
+  list-style: none;
+  flex-direction: column;
+  background-color:white;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-links li {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* ✅ Desktop Styles (768px and up) */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    position: static;
+    display: flex !important;
+    gap: 20px;
+    width: auto;
+  }
+
+  .nav-links li {
+    padding: 0;
+  }
+}
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.signin {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+.quote-button {
+    background-color: rgba(0, 0, 255, 0.58);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  gap: 40px;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 500px;
+  padding: 60px 60px 60px 20px;
+  margin-left: -70px;
+}
+
+.hero-right {
+  flex: 1;
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* Labels on image */
+.labelll-top22, .labelll-bottom22 {
+  position: absolute;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.labelll-top22 {
+  top: 15px;
+  left: 15px;
+}
+
+.labelll-top22 span {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.labelll-bottom22 {
+  bottom: 15px;
+  right: 15px;
+}
+
+.labelll-bottom span {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Buttons */
+.primary-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 19px;
+  border-radius: 6px;
+}
+.hero-buttons {
+  margin-left: 55px;
+}
+  .badge {
+    margin-bottom: 40%;
+    margin-left: 55px;
+    width: 250px;
+    padding: 8px 16px ;
+    background-color: lightblue;
+    color: blue;
+    border: 1px solid #007bff;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .market-heading p {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .market-heading {
+    margin-top: -35%;
+    margin-left: 55px;
+  }
+  .market-heading span {
+    font-weight: normal;
+  }
+    
+  .market-link {
+    font-size: 20px;
+    font-weight: 600;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+.secondary-btn {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+
+/* Icons/Features */
+.features {
+  margin-top: 30px;
+  display: flex;
+  gap: 80px;
+  font-size: 14px;
+  color: #555;
+  margin-left: 55px;
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .hero-left, .hero-right {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .hero-right img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border-radius: 10px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+  
+ h3{
+            display: flex;
+            justify-content: center;
+        }
+        .generalcontent{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .premium{
+         font-size:15px;
+         font-weight: bold;
+         color: gray;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 16px;
+         text-align: center;
+         margin-top: -2%;
+
+        }
+         .farmproduce{
+            max-width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: white;
+         }
+        .image-brob{
+     position: relative;
+     border-radius: 8px;
+     overflow: hidden;
+        }
+        .label-top{
+       top: 12px;
+       right: 12px;
+       position: absolute;
+      background: blue;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+        }
+        .content{
+            padding: 16px;
+            border-radius: 8px;
+            background-color: whitesmoke;
+
+             
+        }
+        .content-header{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vegtables{
+            margin: 16px 0;
+            font-size: 14px;
+            color: darkgray;
+            border-radius: 20px;
+        }
+        .categorybutton{
+           width: 100%;
+           padding: 10px;
+           background: white;
+           border-radius: 8px;
+           font-weight: bold;
+           color:darkgray;
+           cursor: pointer;
+           outline: none;
+           border: none;
+         margin-bottom: 10%;
+        }
+        .abox{
+            background-color: lightblue;
+            color: blue;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+      .fresh-h{
+        font-weight: bold;
+      }
+      .fresh-p{
+        font-size: 14px;
+        color: gray;
+        margin-top: -2%;
+      }
+      .fresh{
+        display: flex;
+        flex-direction: column;
+      }
+      .sourcing{
+        background-color: rgba(173, 216, 230, 0.776);
+        width: 850px;
+        height: 200px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .sourcing p{
+        text-align: center;
+        margin-top: -5%;
+      }
+      .sourcing button{
+        background-color: rgba(0, 0, 255, 0.651);
+        width: 30%;
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        outline: none;
+        border: none;
+      }
+      main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .trusted{
+         background-color: black;
+        width: 850px;
+        height: 240px;
+         display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        color: white;
+        text-align: center;
+      }
+      .trusted h2{
+        font-size: 24px;
+      }
+      .trusted p{
+        color: gray;
+      }
+
+  .active-g{
+    display: flex;
+    justify-content: space-between;
+    gap: 120px;
+  }
+  .active-top {
+  color: blue;
+  display: block;
+  font-weight: bolder;
+  font-size: 24px;
+  }
+
+  .active-bottom {
+  color:gray;
+  font-size: 14px;
+    }
+  .active-box{
+  text-align: center;
+  }
+  .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .downlast{
+    background-color: black;
+    height: 500px;
+    color: white;
+    padding: 40px 20px;
+  }
+  .downlast p{
+    text-align: left;
+  }
+
+  .downlast h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+   .downlast form {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+   }
+   .downlast input {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid grey;
+    width: 230px;
+   }
+    .downlast button {
+      background-color: blue;
+      color: white;
+      border-radius: 7px;
+      padding: 7px;
+      border: none;
+    }
+    .downtop p{
+      text-align: center;
+    }
+
+    .fres {
+  font-size: 24px;
+  font-weight: bold;
+  }
+ .fres.first {
+    color:white;
+    font-size: 30px;
+  }
+ .fres .second {
+  font-size: small;
+    color: blue;
+    margin-left: -5px;
+} 
+ .vault{
+  margin-left:-0%;
+ }
+ .company{
+  display: flex ;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 0px;
+  margin: 0;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  max-width: 1900px;
+ }
+  .media {
+  display: flex;
+  gap: 15px;
+  
+  }
+  .media h4 span {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .media a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 18px;
+    color:gray;
+    text-decoration: none;
+  }
+   .copyright {
+    border-top:1px solid #222 ;
+    margin-top: 30px;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:grey;
+    text-align: center;
+   }
+   .copyright p{
+    margin-bottom: 0px;
+   }
+   .brandinfo {
+     flex: 1 1 300px;
+     max-width: 300px;
+     text-align: center;
+   }
+   .brandinfo h4 {
+    font-size: 20px;
+    margin-bottom:10px ;
+   }
+   .brandinfo p {
+     margin: 8px 0;
+   }
+   .mbottoms {
+    border-top: 1px solid #222;
+    margin-top: 30px;
+    padding: 15px 0;
+
+   }
+   .mbottoms p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+   }
+    </style>
+</head>
+<body>
+      <nav class="navbar">
+    <div class="logo"><span class="first"> <a href="dawn 1 .html">FreshVault</span>
+    <span class="second">wholes</a></span></div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="dawn2.htm" target="_blank">Product</a></li>
+      <li><a href="#">Benefit</a></li>
+      <li><a href="dawn about us .html" target="_blank">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+        <a href="dawn3.html" target="_blank" class="signin">👤Sign In</a>
+        <button class="quote-button"> Get Qoute</button>
+    </div>
+  </nav>
+  <section class="hero">
+  <div class="hero-left">
+    <button class="badge">⬇ Save up to 40% on bulk orders</button>
+    <br> 
+    <div class="market-heading">
+    <p>Premium Wholesale<br><a href="#" class="market-link">Food Marketplace</a></p> <br>
+      <span> Connect directly with farms and manufacturers. Get fresh,
+       high-quality ingredients at wholesale prices with same-day
+        delivery and smart inventory management.</span></div> <br>
+    
+    <div class="hero-buttons">
+      <button class="primary-btn">Start Ordering →</button>
+      <button class="secondary-btn">Schedule Demo</button>
+    </div> <br>
+
+    <div class="features">
+      <div>⏱ <br>Same-day delivery</div>
+      <div>🛡<br> Quality guaranteed</div>
+      <div>🔄 <br>Wholesale pricing</div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="image-wrapper">
+      <img src="image\750x469-0-0-1-80-r_du_plessis_cXvqCw0m5WE_unsplash.jpg" alt="Marketplace"
+      width="auto" height="auto"  />
+      <div class="labelll-top22">Fresh Produce<br><span>40% Off</span></div>
+      <div class="labelll-bottom22">Quality Score<br><span>A+</span></div>
+    </div>
+  </div>
+</section>
+ 
+         <h2 style="display: flex; justify-content: center;">
+          Premium food categories</h2><br> 
+     <div class="premium"> Discover our comprehensive selection of wholesale foood Product,
+         sourced directly from farms<br> and manufacturers. 
+         Everything your business needs in one place</div>
+   <section class="generalcontent"> <div class="farmproduce"> <div class="image-brob">
+     <img src="image\IMG-20250910-WA0001.jpg" alt="fresh" height="270" width="100%"><br> 
+     <span class="label-top">30% OFF</span> </div> 
+     <div class="content"> <div class="content-header">
+    <div class="abox">🍎</div> <span class="fresh">
+     <span class="fresh-h">Fresh Produce</span> 
+         <span class="fresh-p" >500+items</span> </span> </div> <p class="vegtables"> 
+       farm fresh fruit and vegetables sourced<br> directly from local and organic farms. </p> 
+        <button class="categorybutton">browse category</button> </div> </div> <div class="farmproduce">
+        <div class="image-brob"> <img src="image\IMG-20250910-WA0000(1).jpg" alt="fresh" width="100%" height="270"><br>
+       <span class="label-top">25% OFF</span> </div> 
+       <div class="content"> <div class="content-header">
+         <div class="abox">🌿</div> <span class="fresh"> 
+       <span class="fresh-h">Pantry staples</span> 
+       <span class="fresh-p" >300+items</span> 
+        </span> </div> <p class="vegtables"> Essential dry goods,grains, spices,and<br> 
+          cooking ingredients for your kitchen. </p>
+            <button class="categorybutton">browse category</button>
+          </div>
+        </div>
+        <div class="farmproduce"> <div class="image-brob">
+      <img src="image\IMG-20250913-WA0012.jpg" alt="fresh" width="100%" height="270"><br>
+       <span class="label-top">35% OFF</span> </div>
+        <div class="content">
+       <div class="content-header">
+       <div class="abox">🪬</div> <span class="fresh"> 
+       <span class="fresh-h">Premium Proteins</span>
+      <span class="fresh-p" >200+items</span>
+      </span> 
+       </div> 
+        <p class="vegtables"> High-quality meats, poultry,and seafood from <br> trusted suppliers. </p> 
+       <button class="categorybutton">browse category</button> 
+      </div>
+      </div> </section> <br><br>
+      <div class="row"> <div class="farmproduce"> 
+      <div class="image-brob"> <img src="image\IMG-20250913-WA0013.jpg" alt="fresh" width="100%" height="270"><br>
+        <span class="label-top">20% OFF</span> </div> <div class="content"> 
+       <div class="content-header"> <div class="abox">🍼</div> <span class="fresh"> 
+       <span class="fresh-h">Dairy & Eggs</span> <span class="fresh-p" >150+items</span>
+       </span> </div> <p class="vegtables"> Fresh dairy product and farm eggs from local<br> and artisanal. </p> 
+      <button class="categorybutton">browse category</button> </div> </div>
+      
+      <div class="farmproduce"> 
+      <div class="image-brob"> 
+        <img src="image\750x469-0-0-1-80-r_du_plessis_cXvqCw0m5WE_unsplash.jpg" alt="fresh" width="100%" height="270"><br>
+      <span class="label-top">15% OFF</span> </div> 
+      <div class="content"> 
+      <div class="content-header">
+     <div class="abox">🍵</div> 
+     <span class="fresh"> 
+    <span class="fresh-h">Beverages</span>
+     <span class="fresh-p" >100+items</span>
+    </span>
+   </div> 
+   <p class="vegtables"> Coffe,tea,juices,and specialty drinks for<br> your establishment. </p>
+   <button class="categorybutton">browse category</button>
+   </div> 
+  </div> 
+
+     <div class="farmproduce"> 
+    <div class="image-brob">
+     <img src="image\IMG-20250910-WA0000(1).jpg" alt="fresh" width="100%" height="270"><br> 
+    <span class="label-top">40% OFF</span> </div> <div class="content"> 
+      <div class="content-header">
+     <div class="abox">🐟</div>
+    <span class="fresh"> 
+      <span class="fresh-h">specialty items</span>
+      <span class="fresh-p" >250+items</span>
+     </span> </div> <p class="vegtables"> Essential dry goods,grains, spices,and<br>
+    cooking ingredients for your kitchen. </p>
+    <button class="categorybutton">browse category</button>
+     </div>
+      </div> </div> 
+
+       <main> 
+    <footer class="sourcing"> 
+  <h2>Can't find what you're looking for?</h2><br><br>
+    <p> our sourcing team can help you find specialty ingredient and custom product tailored to your <br> 
+    business needs. Get in touch for personalized assistance </p> 
+    <button type="submit">Contact our sourcing Team</button>
+   </footer><br><br> <div class="trusted"> 
+    <h2> Trusted by Food Business Nationwide</h2>
+     <p> join thousands of restaurants,cafes,and food service providers who trust FreshVault for their <br>
+     wholesale needs </p> <div class="active-g">
+    <div class="active-box"> <span class="active-top">5,000+ <br></span>
+     <span class="active-bottom ">active business </span> </div> 
+     <div class="active-box"> <span class="active-top">50M+<br></span> 
+    <span class="active-bottom ">Orders Delivered</span> </div> 
+    <div class="active-box">
+     <span class="active-top">99.8% <br></span> 
+     <span class="active-bottom ">On-Time delivery </span> </div>       
+     <div class="active-box"> <span class="active-top">40% <br></span>
+       <span class="active-bottom ">Average Savings </span> </div>
+       </div> </div>
+       </main> <br> <br>
+
+
+        <footer class="downlast">
+  <div class="downtop">
+    <h3>Stay updated with FreshVault</h3>
+    <br>
+    <p>
+      Get the latest updates on new products, special offers,
+      and industry insights delivered straight <br>
+      to your inbox.
+    </p>
+  </div>
+
+  <form>
+    <input type="email" id="email" placeholder="Enter your email">
+    <button type="submit">Subscribe</button>
+  </form>
+  <br>
+
+  <div class="company">
+    <div class="brandinfo">
+      <div class="fres">
+        <span class="fres first">FreshVault</span>
+        <span class="second">Wholesale</span>
+      </div>
+      <p>
+        Premium wholesale food marketplace connecting businesses <br>
+        directly with farms and manufacturers. Fresh ingredients, <br>
+        wholesale prices, reliable delivery.
+      </p>
+      <ul class="contact-info">
+        <li>📧 hello@freshvault.com</li>
+        <li>📞 1-600-FRESH-VT</li>
+        <li>📍 1234 Market Street, Suite 500 <br>San Francisco, CA 94102</li>
+      </ul>
+    </div>
+
+             
+    <div>
+      <h4>Company</h4>
+      <p>About Us</p>
+      <p>Our Story</p>
+      <p>Careers</p>
+      <p>Press</p>
+      <p>Contact</p>
+    </div>
+
+    <div>
+      <h4>Products</h4>
+      <p>Fresh Produce</p>
+      <p>Pantry Staples</p>
+      <p>Premium Proteins</p>
+      <p>Dairy & Eggs</p>
+      <p>Specialty Items</p>
+    </div>
+
+    <div>
+      <h4>Support</h4>
+      <p>Help Center</p>
+      <p>Order Tracking</p>
+      <p>Returns & Refunds</p>
+      <p>Food Safety</p>
+      <p>Account Support</p>
+    </div>
+
+    <div>
+      <h4>Legal</h4>
+      <p>Privacy Policy</p>
+      <p>Terms of Service</p>
+      <p>Food Safety</p>
+      <p>Supplier Code</p>
+      <p>Accessibility</p>
+    </div>
+
+
+    
+  </div>
+
+
+  <div class="copyright">
+    © 2025 FreshVault Wholesale. All rights reserved.
+        <p>DESIGN BY SOLOMON ALIES NEXARO</p>
+  <div class="media">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter (X)</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+   </div>
+
+
+</div>
+</footer>
+
+
+
+    <script src="nav bar\nav1script.js"></script>
+</body>
+</html>

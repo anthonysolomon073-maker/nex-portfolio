@@ -1,0 +1,87 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+ 
+/* Navbar Base (Mobile First) */
+.navbar {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  position: relative;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Nav Links hidden by default on mobile */
+.nav-links {
+  list-style: none;
+  flex-direction: column;
+  background-color: #333;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  display: none;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-links li {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* ✅ Desktop Styles (768px and up) */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    position: static;
+    display: flex !important;
+    gap: 20px;
+    width: auto;
+  }
+
+  .nav-links li {
+    padding: 0;
+  }
+}

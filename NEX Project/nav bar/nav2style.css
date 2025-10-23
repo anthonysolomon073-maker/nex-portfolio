@@ -1,0 +1,107 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Toggle Icon */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #222;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.logo {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-links li {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.sidebar-links li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar-links li a:hover,
+.sidebar-links li a.active {
+  background-color: #444;
+  color: #fff;
+  border-left: 4px solid #0af;
+}
+
+/* Main content */
+.content {
+  padding: 80px 20px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.open ~ .content {
+  margin-left: 250px;
+}
+
+/* Responsive tweaks (optional) */
+@media (max-width: 600px) {
+  .sidebar.open ~ .content {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .content {
+    margin-left: 250px;
+  }
+}

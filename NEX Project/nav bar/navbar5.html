@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Full-Screen Overlay Nav</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Hamburger Icon */
+    .menu-icon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      color: #fff;
+      z-index: 1001;
+      cursor: pointer;
+      background-color: #111;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    /* Overlay Menu */
+    .overlay {
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease;
+      z-index: 1000;
+    }
+
+    .overlay.show {
+      transform: translateY(0);
+    }
+
+    .overlay a {
+      color: white;
+      font-size: 28px;
+      margin: 20px 0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a.active {
+      color: #0af;
+    }
+
+    /* Dummy sections for scroll */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    #hero {
+      height: 100vh;
+      background: linear-gradient(to right, #0af, #00bfa6);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+      .overlay a {
+        font-size: 36px;
+      }
+    }
+  </style>
+
+  <!-- FontAwesome for icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Hamburger Icon -->
+  <div class="menu-icon" id="menu-icon">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full-Screen Overlay Navigation -->
+  <div class="overlay" id="overlay">
+    <a href="#hero" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Page Content -->
+  <section id="hero">
+    <h1>Overlay Nav</h1>
+    <p>Click the menu icon to see the full-screen navigation.</p>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>This section contains info about us.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>These are our recent works.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Get in touch with us here.</p>
+  </section>
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const overlay = document.getElementById('overlay');
+    const links = document.querySelectorAll('.overlay a');
+
+    // Toggle overlay
+    menuIcon.addEventListener('click', () => {
+      overlay.classList.toggle('show');
+    });
+
+    // Set active link and close menu
+    links.forEach(link => {
+      link.addEventListener('click', function () {
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        overlay.classList.remove('show'); // Close after click
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Style 7 – Working Dropdowns</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; }
+    html { scroll-behavior: smooth; }
+    section { padding:80px 20px; text-align:center; }
+    #home { background: linear-gradient(to right, #0af, #00bfa6); color:#fff; height:100vh;
+      display:flex; align-items:center; justify-content:center; }
+
+    .navbar {
+      display:flex; align-items:center; justify-content:space-between;
+      flex-wrap:wrap; padding:15px 20px; background:#111; color:#fff; position:sticky;
+      top:0; z-index:999;
+    }
+    .menu-toggle { display:block; cursor:pointer; flex-shrink:0; }
+    .menu-toggle div {
+      width:25px; height:3px; background:#fff; margin:4px 0;
+    }
+    .center-logo {
+      flex-grow:1; text-align:center; font-size:22px; font-weight:bold; color:#0af;
+    }
+    .nav-links {
+      display:none; width:100%; flex-direction:column; gap:10px; align-items:center;
+    }
+    .navbar.open .nav-links { display:flex; }
+    .nav-row { display:flex; flex-direction:column; gap:10px; }
+    .dropdown { position:relative; width:100%; max-width:300px; }
+    .dropdown > a {
+      display:block; color:#fff; text-decoration:none; font-size:16px;
+      padding:8px 12px; text-align:center;
+    }
+    .dropdown > a.active, .dropdown > a:hover { color:#0af; }
+    .dropdown-content {
+      display:none; flex-direction:column; background:#222;
+      position:relative; margin-top:2px;
+    }
+    .dropdown.open .dropdown-content { display:flex; }
+    .dropdown-content a {
+      color:#fff; text-decoration:none; font-size:14px;
+      padding:8px 12px; text-align:center;
+    }
+    .dropdown-content a:hover, .dropdown-content a.active { color:#0af; }
+
+    @media (min-width:768px) {
+      .menu-toggle { display:none; }
+      .nav-links {
+        display:flex !important; flex-direction:row;
+        justify-content:space-between; width:auto;
+      }
+      .nav-row { flex-direction:row; gap:30px; }
+      .dropdown { width:auto; }
+      .dropdown-content {
+        position:absolute; top:100%; left:0;
+        box-shadow:0 2px 6px rgba(0,0,0,0.3); min-width:160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="menu-toggle" id="menu-toggle">
+    <div></div><div></div><div></div>
+  </div>
+  <div class="center-logo">Brand</div>
+
+  <div class="nav-links" id="nav-links">
+    <div class="nav-row">
+      <div class="dropdown">
+        <a href="#home">Home ▾</a>
+        <div class="dropdown-content">
+          <a href="#home">Overview</a>
+          <a href="#home-news">Latest</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#about">About ▾</a>
+        <div class="dropdown-content">
+          <a href="#about-team">Team</a>
+          <a href="#about-mission">Mission</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#projects">Projects ▾</a>
+        <div class="dropdown-content">
+          <a href="#web">Web Design</a>
+          <a href="#branding">Branding</a>
+          <a href="#uiux">UI/UX</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#contact">Contact ▾</a>
+        <div class="dropdown-content">
+          <a href="#contact-form">Form</a>
+          <a href="#contact-map">Map</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section id="home"><h1>Home Section</h1></section>
+<section id="home-news"><h2>Latest News</h2></section>
+<section id="about"><h2>About</h2></section>
+<section id="about-team"><h2>Our Team</h2></section>
+<section id="about-mission"><h2>Mission</h2></section>
+<section id="projects"><h2>Projects</h2></section>
+<section id="web"><h2>Web Design</h2></section>
+<section id="branding"><h2>Branding</h2></section>
+<section id="uiux"><h2>UI/UX</h2></section>
+<section id="contact"><h2>Contact</h2></section>
+<section id="contact-form"><h2>Contact Form</h2></section>
+<section id="contact-map"><h2>Map & Location</h2></section>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    navbar.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.dropdown > a').forEach(t => {
+    t.addEventListener('click', e => {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        e.stopPropagation();
+        t.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  document.querySelectorAll('.dropdown-content a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('a.active').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+      navbar.classList.remove('open');
+      document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (window.innerWidth < 768 && !navbar.contains(e.target)) {
+      navbar.classList.remove('open');
+      document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+  });
+</script>
+
+</body>
+</html>
