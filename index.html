@@ -1,13 +1,492 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Nex port</title><style> /* Navbar Base (Mobile First) */
-.navbar { background-color: black; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; height: 60px; position: relative;
-} .logo { color: #fff; font-size: 24px; font-weight: bold;
-} .menu-toggle { display: block; font-size: 28px; color: white; cursor: pointer;
-} /* Nav Links hidden by default on mobile */
-.nav-links { list-style: none; flex-direction: column; background-color: none; position: absolute; top: 60px; right: 0; width: 100%; display: none; justify-content: center; flex: 1;
-} .nav-links.show { display: flex;
-} .nav-links li { text-align: center; padding: 10px 0;
-} .nav-links li a { text-decoration: none; color: white; padding: 8px 12px; transition: background 0.3s;
-} .nav-links li a:hover { background-color: #0f0; border-radius: 5px;
-} /* ✅ Desktop Styles (768px and up) */
-@media (min-width: 768px) { .menu-toggle { display: none; } .nav-links { flex-direction: row; position: static; display: flex !important; gap: 20px; width: auto; } .nav-links li { padding: 0; }
-} header { display: flex ; justify-content: center!important; align-items: center; } .intro { background: darkslategray; color: #fff; padding: 80px 5%; display: flex; justify-content: center; } .intro-container { display: flex; align-items: center; gap:50px ; max-width: 1100px; width: 100%; } .intro-image img { border-radius: 5px; border: 4px solid #fff; } .intro-text h4 { font-size: 18px; margin: 0; } .intro-text h1 { font-size: 40px; margin: 10px 0; font-weight: bold; } .intro-text h1 span { color:green; } .intro-text p { font-size: 16px; margin-bottom: 20px; } .intro-buttons { display: flex; gap: 15px; } .intro-buttons .btn, .intro-buttons .btn-alt { padding: 10px 20px; border-radius: 4px; font-size: 14px; text-decoration: none; font-weight: bold; transition: 0.3s; } .intro-buttons .btn { background-color: green; color:black; } .intro-buttons .btn-alt { border: 2px solid green; color: green; } .intro-buttons .btn:hover { background-color: #0c0; } .intro-buttons .btn-alt:hover { background-color: green; color: black; } .services { padding: 60px 20px; background-color: #f9f9f9; } .services h2 { text-align: center; margin-bottom: 10px; } .services .underline { width: 80px; height: 4px; background-color: #ff6600; margin: 0 auto 40px auto; border-radius: 2px; text-align: center; } .services-container { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; } .services-box { flex: 1; padding: 30px; border: 1px solid whitesmoke; text-align: center; border-radius: 8px; transition: 0.3s; background-color: #fff; } .services-box:hover { border-color: green; transform: scale(1.03); } .services-number { font-size: 40px; font-weight: bold; margin-bottom: 10px; } .services-box h3 { font-size: 20px ; margin-bottom: 10px; } .services-box p { font-size: 14px; line-height: 1.5; } .about { background-color: #2f2f2f; color: white; padding: 80px 5%; text-align: center; } .about-container { max-width: 800px; margin: 0 auto; } .about-title{ font-size: 28px; font-weight: bold; margin-bottom: 20px; } .about p { font-size: 18px; line-height: 1.6; margin-bottom: 30px; } .about-btn { display: inline-block; padding: 12px 25px; background-color: green; color:black; font-weight: bold; text-decoration: none; border-radius: 4px; transition: 0.3s; } .about-btn:hover { background-color: #0c0; } .footer { background-color:black; display: flex; justify-content: space-between; align-items: center; padding: 30px 5%; border-top:1px solid rgba(255, 255, 255, 0.1) ; } .footer-left h2 { font-size: 20px; color: #0f0; } .footer-left span { font-size: 14px; color: white; } .footer-right a { color: green; margin-left: 15px; font-size: 14px; text-decoration: none; transition: 0.3s; } .footer-right a:hover { opacity: 0.7; } </style></head><body><nav class="navbar"><div class="logo">Nex</div><div class="menu-toggle" id="menu-toggle">☰</div><ul class="nav-links" id="nav-links"><li><a href="#">Home</a></li><li><a href="#">Services</a></li><li><a href="#">About</a></li><li><a href="#">skils</a></li><li><a href="#">portfolio</a></li><li><a href="#">Contact</a></li></ul></nav><br><header class="intro"><div class="intro-container"><div class="intro-image"><img src="image\20250717_131722.jpg" alt=""></div><div class="intro-text"><h4>Hello,I'm</h4><h1> Solomon <span>Tofunmi</span> Anthony</h1><p> i'm solomon professional web developer <br> Turning ideas into websites, Graphics & Community Impact <br> with a short time experience in this field. </p><div class="intro-buttons"><a href="portfolio" class="btn"> View My Work </a><a href="contact" class="btn-alt"> Contact Me</a></div></div></div></header><section class="services"><h2> My Services</h2><div class="underline"></div><div class="services-container"><div class="services-box"><div class="services-number">01</div><h3>Web development</h3><p> I build responsive and functional websites for bussiness and personal brands. </p></div><div class="services-box"><div class="services-number">02</div><h3> Graphics Design</h3><p> I create stunning Visuals such as logos, flyers, and branding materials. </p></div><div class="services-box"><div class="services-number">03</div><h3>Community Management </h3><p> I help brand grow and engage their online audience effectively </p></div></div></section><section class="about"><div class="about-container"><h2 class="about-title">About Me</h2><p> Hey there! I'm <b>Solomon Tofunmi Anthony</b> a web developer turning ideas into websites, graohics and comunity impact. My journey in this field may be short, but my dedication is strong. every project i take on is built with passion and purpose. </p><a href="https://wa.me/2349030438327" class="about-btn">Hire Me</a></div></section><footer class="footer"><div class="footer-left"><h2>Nexaro <span>(path to futurea)</span></h2></div><div class="footer-right"><a href="">Facebook</a><a href="">Instagram</a><a href="">Twitter (x)</a><a href=""> LInkedin</a><a href="">GitHub</a><a href="https://wa.me/2349030438327">Whatsapp</a><a href="anthonysolomon073@gmail.com">Email</a></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nex port</title>
+    <style>
+        /* Navbar Base (Mobile First) */
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  position: relative;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Nav Links hidden by default on mobile */
+.nav-links {
+  list-style: none;
+  flex-direction: column;
+  background-color: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-links li {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #0f0;
+  border-radius: 5px;
+}
+
+/* ✅ Desktop Styles (768px and up) */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    position: static;
+    display: flex !important;
+    gap: 20px;
+    width: auto;
+  }
+
+  .nav-links li {
+    padding: 0;
+  }
+}
+  header {
+      display: flex ;
+      justify-content: center!important;
+      align-items: center;
+  }
+    .intro {
+      background: darkslategray;
+      color: #fff;
+      padding: 80px 5%;
+      display: flex;
+      justify-content: center;
+    }
+    .intro-container {
+      display: flex;
+      align-items: center;
+      gap:50px ;
+      max-width: 1100px;
+      width: 100%;
+    }
+    .intro-image img {
+      border-radius: 5px;
+      border: 4px solid #fff;
+    }
+    .intro-text h4 {
+      font-size: 18px;
+      margin: 0;
+    }
+    .intro-text h1 {
+      font-size: 40px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .intro-text h1 span {
+      color:green;
+    }
+    .intro-text  p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .intro-buttons {
+      display: flex;
+      gap: 15px;
+    }
+    .intro-buttons .btn,
+    .intro-buttons .btn-alt {
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .intro-buttons .btn {
+      background-color: green;
+      color:black;
+    }
+    .intro-buttons .btn-alt {
+      border: 2px solid green;
+      color: green;
+    }
+    .intro-buttons .btn:hover {
+      background-color: #0c0;
+    }
+    .intro-buttons .btn-alt:hover {
+      background-color: green;
+      color: black;
+    }
+    .services {
+      padding: 60px 20px;
+      background-color: #f9f9f9;
+    }
+    .services h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+     .services .underline {
+      width: 80px;
+      height: 4px;
+      background-color: #ff6600;
+      margin: 0 auto 40px auto;
+      border-radius: 2px;
+      text-align: center;
+    }
+    .services-container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .services-box {
+      flex: 1;
+      padding: 30px;
+      border: 1px solid whitesmoke;
+      text-align: center;
+      border-radius: 8px;
+      transition: 0.3s;
+      background-color: #fff;
+    }
+    .services-box:hover {
+      border-color: green;
+      transform: scale(1.03);
+    }
+    .services-number {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .services-box h3 {
+      font-size:  20px ;
+      margin-bottom: 10px;
+    }
+    .services-box p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .about {
+      background-color: #2f2f2f;
+      color: white;
+      padding: 80px 5%;
+      text-align: center;
+    }
+    .about-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .about-title{
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .about p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .about-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: green;
+      color:black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    .about-btn:hover {
+      background-color: #0c0;
+    }
+    .footer {
+      background-color:black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 5%;
+      border-top:1px solid rgba(255, 255, 255, 0.1) ;
+    }
+    .footer-left h2 {
+      font-size: 20px;
+      color: #0f0;
+    }
+    .footer-left span {
+      font-size: 14px;
+      color: white;
+    }
+    .footer-right a {
+      color: green;
+      margin-left: 15px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .footer-right a:hover {
+      opacity: 0.7;
+    }
+    @media (max-width:768px;) {
+       .intro-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+        }
+        .intro-image img {
+          width: 150px;
+          height: 150px;
+          margin-bottom: 15px;
+        }
+        .intro-text h1 {
+          font-size: 28px;
+        }
+        .intro-text p {
+          font-size: 14px;
+        }
+        .intro-text button {
+          font-size: 14px;
+          padding: 10px 20px;
+        }
+        .about {
+          padding: 60px 8%;
+          text-align: center;
+        }
+        .about h2 {
+          font-size: 26px;
+        }
+        .about p {
+          font-size: 14px;
+          line-height: 1.6;
+        }
+        .services-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .services-box {
+          width: 90%;
+          margin-bottom: 20px;
+        }
+        footer {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 30px 10px;
+          gap: 15px;
+        }
+        .footer-left h2 {
+          font-size: 24px;
+        }
+        .footer-left p {
+          font-size: 14px;
+        }
+        .footer-right a {
+          margin: 5px;
+          display: inline-block;
+        }
+    }
+     
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  
+  .intro-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 8%;
+  }
+
+  .intro-image img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+  }
+
+  .intro-text h1 {
+    font-size: 34px;
+  }
+
+  .intro-text p {
+    font-size: 15px;
+  }
+
+  .intro-buttons a {
+    font-size: 15px;
+    padding: 12px 25px;
+  }
+
+
+  .about {
+    padding: 70px 10%;
+    text-align: center;
+  }
+
+  .about h2 {
+    font-size: 28px;
+  }
+
+  .about p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Services Section */
+  .services-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .service-box {
+    width: 45%;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 8%;
+  }
+
+  .footer-left h2 {
+    font-size: 26px;
+  }
+
+  .footer-right a {
+    margin: 0 10px;
+  }
+}
+
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+    <div class="logo">Nex</div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">skils</a></li>
+      <li><a href="#">portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav> <br> 
+     <header class="intro">
+      <div class="intro-container">
+        <div class="intro-image">
+     <img src="image\20250717_131722.jpg" alt=""> </div>
+       <div class="intro-text">
+     <h4>Hello,I'm</h4> 
+     <h1> Solomon <span>Tofunmi</span>
+        Anthony</h1>
+       <p>
+        i'm solomon professional web developer  <br> 
+        Turning ideas into websites, Graphics & Community Impact <br>
+         with a short time experience in this field.
+       </p>  
+        <div class="intro-buttons">
+         <a href="portfolio" class="btn"> View My Work </a>
+         <a href="contact" class="btn-alt"> Contact Me</a>
+        </div>
+
+       </div>
+
+      </div>
+    </header>
+     
+    <section class="services">
+      <h2> My Services</h2>
+      <div class="underline"></div>
+      <div class="services-container"> 
+          <div class="services-box"> 
+            <div class="services-number">01</div>
+            <h3>Web development</h3>
+            <p> 
+              I build responsive and 
+              functional websites for bussiness and 
+              personal brands.
+            </p>
+          </div>
+           
+          <div class="services-box">
+            <div class="services-number">02</div>
+            <h3> Graphics Design</h3>
+            <p>
+              I create stunning Visuals such 
+              as logos, flyers, and branding materials.
+            </p>
+          </div>
+
+          <div class="services-box">
+            <div class="services-number">03</div>
+            <h3>Community Management </h3>
+            <p>
+              I help brand grow and engage
+              their online audience  effectively
+            </p>
+          </div>
+
+      </div>
+    </section>
+          
+       <section class="about">
+        <div class="about-container">
+          <h2 class="about-title">About Me</h2>
+          <p>
+            Hey there! I'm <b>Solomon Tofunmi Anthony</b>
+            a web developer turning ideas into websites, graohics
+            and comunity impact.
+              My journey in this field may be short, but my dedication is 
+              strong. every project i take on is built with passion and
+              purpose.
+          </p>
+          <a href="https://wa.me/2349030438327" class="about-btn">Hire Me</a>
+        </div>
+       </section>
+
+       <footer class="footer">
+         <div class="footer-left">
+          <h2>Nexaro <span>(path to futurea)</span> </h2>
+         </div>
+         <div class="footer-right">
+          <a href="">Facebook</a>
+          <a href="">Instagram</a>
+          <a href="">Twitter (x)</a>
+          <a href=""> LInkedin</a>
+          <a href="">GitHub</a>
+          <a href="https://wa.me/2349030438327">Whatsapp</a>
+          <a href="anthonysolomon073@gmail.com">Email</a>
+         </div>
+       </footer>
+</body>
+</html>
